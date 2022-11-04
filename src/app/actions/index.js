@@ -15,10 +15,11 @@ export const setFilters = (filters) => ({
   payload: filters,
 });
 
-export const clickFilter = (filter) => ({
-  type: actionTypes.CLICK_FILTER,
-  payload: filter,
-});
+export const clickFilter = (filter) => {
+  // TODO: Return a Redux action
+  // type = CLICK_FILTER
+  // payload = filter name (string)
+};
 
 // Accepts an item as input, returns an action
 export const addToCart = (item) => {

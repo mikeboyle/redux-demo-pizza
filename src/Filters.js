@@ -1,13 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { clickFilter } from './app/actions';
+import { useSelector } from 'react-redux';
 
 const Filters = () => {
-  const dispatch = useDispatch();
   const filters = useSelector((state) => state.filters);
-  const selectedFilters = useSelector((state) => state.selectedFilters);
+  // TODO: Read selectedFilters from Redux;
+  const selectedFilters = [];
 
   const handleFilterClick = (filter) => {
-    dispatch(clickFilter(filter));
+    // TODO: Dispatch CLICK_FILTER action
   };
   return (
     <div>

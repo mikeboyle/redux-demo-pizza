@@ -6,7 +6,8 @@ import Item from './Item';
 const Items = () => {
   const items = useSelector((state) => state.items);
   const search = useSelector((state) => state.search);
-  const selectedFilters = useSelector((state) => state.selectedFilters);
+  // TODO: read selectedFilters from Redux; don't hard code
+  const selectedFilters = [];
 
   const filterByTags = (items, filters) => {
     // if an item's tags include EVERY selected filter, include it

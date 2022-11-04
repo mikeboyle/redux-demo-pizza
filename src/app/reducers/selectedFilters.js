@@ -1,18 +1,16 @@
 import actionTypes from '../actions/actionTypes';
 
-const initialState = [];
+// TODO: What should initial state be?
+const initialState = null;
 
 const selectedFilters = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.CLICK_FILTER:
+      // TODO: Implement toggle filter
       // if payload already in state, remove it
       // otherwise add it to the state
-      const selectedFilter = action.payload;
-      if (state.includes(selectedFilter)) {
-        return state.filter((f) => f !== selectedFilter);
-      } else {
-        return [...state, selectedFilter];
-      }
+
+      return state;
     default:
       return state;
   }
