@@ -13,7 +13,7 @@ const Item = ({ item }) => {
         <b>{item.name}</b> <span>${item.price.toFixed(2)}</span>
       </p>
       <p>{item.shortDescription}</p>
-      <p>Categories: {item.tags.join(',')}</p>
+      <p>Categories: {item.tags.join(', ')}</p>
       <button onClick={() => handleAddToCart(item)}>Add To Cart</button>
     </article>
   );
