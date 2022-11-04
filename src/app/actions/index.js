@@ -20,6 +20,10 @@ export const clickFilter = (filter) => ({
   payload: filter,
 });
 
+export const clearFilters = () => ({
+  type: actionTypes.CLEAR_FILTERS,
+});
+
 // Accepts an item as input, returns an action
 export const addToCart = (item) => {
   const payload = {

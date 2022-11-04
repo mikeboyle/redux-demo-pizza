@@ -13,6 +13,8 @@ const selectedFilters = (state = initialState, action) => {
       } else {
         return [...state, selectedFilter];
       }
+    case actionTypes.CLEAR_FILTERS:
+      return [];
     default:
       return state;
   }

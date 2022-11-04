@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { clickFilter } from './app/actions';
+import { clickFilter, clearFilters } from './app/actions';
 
 const Filters = () => {
   const dispatch = useDispatch();
@@ -8,6 +8,10 @@ const Filters = () => {
 
   const handleFilterClick = (filter) => {
     dispatch(clickFilter(filter));
+  };
+
+  const handleClearFilters = () => {
+    dispatch(clearFilters());
   };
   return (
     <div>
@@ -23,6 +27,7 @@ const Filters = () => {
           {filter}
         </button>
       ))}
+      <button onClick={handleClearFilters}>Clear All</button>
     </div>
   );
 };
