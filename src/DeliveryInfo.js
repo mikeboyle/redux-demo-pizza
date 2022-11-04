@@ -8,9 +8,7 @@ const DeliveryInfo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Validate form info: All elements required
     alert('Your order is on the way!');
-    // TODO: Clear the form inputs
   };
 
   const handleChange = (e, field) => {
@@ -20,7 +18,7 @@ const DeliveryInfo = () => {
 
   return (
     <div>
-      <h2>Delivery Info</h2>
+      <h3>Delivery Info</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
