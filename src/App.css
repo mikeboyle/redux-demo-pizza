@@ -45,3 +45,8 @@ span {
   padding: 0.25rem;
   margin: 0.25rem;
 }
+.Filter-button--selected {
+  background: dodgerblue;
+  color: white;
+  font-weight: 900;
+}
