@@ -12,10 +12,8 @@ const cart = (state = initialState, action) => {
       if (idxToRemove < 0 || idxToRemove > state.length - 1) {
         return state;
       } else {
-        return [
-          ...state.slice(0, idxToRemove),
-          ...state.slice(idxToRemove + 1),
-        ];
+        state.splice(idxToRemove, 1);
+        return state;
       }
     default:
       return state;

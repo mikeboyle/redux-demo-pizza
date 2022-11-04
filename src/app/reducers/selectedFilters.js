@@ -11,7 +11,8 @@ const selectedFilters = (state = initialState, action) => {
       if (state.includes(selectedFilter)) {
         return state.filter((f) => f !== selectedFilter);
       } else {
-        return [...state, selectedFilter];
+        state.push(selectedFilter);
+        return state;
       }
     default:
       return state;

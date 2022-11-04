@@ -16,7 +16,8 @@ const deliveryInfo = (state = initialState(), action) => {
       if (!FIELD_NAMES.includes(field)) {
         return state;
       }
-      return { ...state, [field]: value };
+      state[field] = value;
+      return state;
     default:
       return state;
   }
