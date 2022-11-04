@@ -11,6 +11,10 @@ const selectedFilters = (state = initialState, action) => {
       // otherwise add it to the state
 
       return state;
+    case actionTypes.CLEAR_FILTERS:
+      // TODO: Remove all selected filters
+
+      return state;
     default:
       return state;
   }

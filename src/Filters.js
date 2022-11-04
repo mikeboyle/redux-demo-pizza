@@ -8,6 +8,11 @@ const Filters = () => {
   const handleFilterClick = (filter) => {
     // TODO: Dispatch CLICK_FILTER action
   };
+
+  const handleClearFilters = () => {
+    // TODO: Dispatch CLEAR_FILTERS action
+  };
+
   return (
     <div>
       {filters.map((filter) => (
@@ -22,6 +27,7 @@ const Filters = () => {
           {filter}
         </button>
       ))}
+      <button onClick={handleClearFilters}>Clear All</button>
     </div>
   );
 };

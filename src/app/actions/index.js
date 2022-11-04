@@ -21,6 +21,12 @@ export const clickFilter = (filter) => {
   // payload = filter name (string)
 };
 
+export const clearFilters = () => {
+  // TODO: Return a Redux action
+  // type = CLEAR_FILTERS
+  // Does this action need a payload??
+};
+
 // Accepts an item as input, returns an action
 export const addToCart = (item) => {
   const payload = {
