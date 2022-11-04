@@ -20,25 +20,16 @@ export const clickFilter = (filter) => ({
   payload: filter,
 });
 
-// Accepts an item as input, returns an action
 export const addToCart = (item) => {
-  const payload = {
-    id: item.id,
-    name: item.name,
-    price: item.price,
-  };
-
-  return {
-    type: actionTypes.ADD_TO_CART,
-    payload,
-  };
+  // TODO: Accepts an item as input, returns an action
+  // payload should be { id: <item id>, name: <item name>, price: <item price> }
 };
 
 // Accepts the index of the item to be removed
-export const removeFromCart = (index) => ({
-  type: actionTypes.REMOVE_FROM_CART,
-  payload: index,
-});
+export const removeFromCart = (index) => {
+  // TODO: Accepts the index of the item to be removed
+  // payload is the index
+};
 
 export const updateDeliveryInfo = (field, value) => ({
   type: actionTypes.UPDATE_DELIVERY_INFO,

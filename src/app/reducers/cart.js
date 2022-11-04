@@ -1,22 +1,16 @@
 import actionTypes from '../actions/actionTypes';
 
-const initialState = [];
+// TODO: Set initial state
+const initialState = null;
 
 const cart = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
-      return [...state, action.payload];
+      // TODO: Add item to cart
+      return state;
     case actionTypes.REMOVE_FROM_CART:
-      // Remove the item at specified index
-      const idxToRemove = action.payload;
-      if (idxToRemove < 0 || idxToRemove > state.length - 1) {
-        return state;
-      } else {
-        return [
-          ...state.slice(0, idxToRemove),
-          ...state.slice(idxToRemove + 1),
-        ];
-      }
+      // TODO: Remove the item at specified index
+      return state;
     default:
       return state;
   }

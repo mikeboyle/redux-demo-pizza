@@ -1,10 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { addToCart } from './app/actions';
-
 const Item = ({ item }) => {
-  const dispatch = useDispatch();
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
+    // TODO: dispatch add to cart action
   };
 
   return (
