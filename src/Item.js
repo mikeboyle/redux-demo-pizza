@@ -1,6 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { addToCart } from './app/actions';
+
 const Item = ({ item }) => {
+  const dispatch = useDispatch();
   const handleAddToCart = (item) => {
-    // TODO: dispatch add to cart action
+    dispatch(addToCart(item));
   };
 
   return (

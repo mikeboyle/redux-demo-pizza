@@ -1,6 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { removeFromCart } from './app/actions';
+
 const CartItem = ({ cartItem, index }) => {
+  const dispatch = useDispatch();
   const handleRemoveFromCart = () => {
-    // TODO: dispatch action to remove from cart
+    dispatch(removeFromCart(index));
   };
 
   return (

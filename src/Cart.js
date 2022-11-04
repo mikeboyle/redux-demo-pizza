@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
 import DeliveryInfo from './DeliveryInfo';
 
@@ -16,8 +17,7 @@ const renderCartContents = (cart) => {
 };
 
 const Cart = () => {
-  // TODO: Read cart from state; don't hardcode
-  const cart = [];
+  const cart = useSelector((state) => state.cart);
   return (
     <section className="Cart">
       <h1>Cart</h1>
