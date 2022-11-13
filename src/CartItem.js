@@ -10,7 +10,7 @@ const CartItem = ({ cartItem, index }) => {
   return (
     <article>
       {cartItem.name} ${cartItem.price.toFixed(2)}
-      <button onClick={() => handleRemoveFromCart(cartItem)}>Remove</button>
+      <button onClick={() => handleRemoveFromCart()}>Remove</button>
     </article>
   );
 };
