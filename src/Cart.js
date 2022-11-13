@@ -1,8 +1,9 @@
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import CartItem from './CartItem';
 import DeliveryInfo from './DeliveryInfo';
 
-const renderCartContents = (cart) => {
+// Add default value to ensure cart is never undefined
+const renderCartContents = (cart = []) => {
   if (cart.length === 0) {
     return <p>Cart is empty. Add something!</p>;
   }
@@ -16,8 +17,7 @@ const renderCartContents = (cart) => {
   );
 };
 
-const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+const Cart = ({ cart }) => {
   return (
     <section className="Cart">
       <h1>Cart</h1>
@@ -27,4 +27,8 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Cart);

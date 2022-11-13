@@ -1,19 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { updateDeliveryInfo } from './app/actions';
 
-const DeliveryInfo = () => {
-  const dispatch = useDispatch();
-  const deliveryInfo = useSelector((state) => state.deliveryInfo);
+const DeliveryInfo = ({ deliveryInfo, handleChange }) => {
   const { name, address, phone, creditCard } = deliveryInfo;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert('Your order is on the way!');
-  };
-
-  const handleChange = (e, field) => {
-    const value = e.target.value;
-    dispatch(updateDeliveryInfo(field, value));
   };
 
   return (
@@ -50,4 +43,15 @@ const DeliveryInfo = () => {
   );
 };
 
-export default DeliveryInfo;
+const mapStateToProps = (state) => ({
+  deliveryInfo: state.deliveryInfo,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  handleChange: (e, field) => {
+    const { value } = e.target;
+    dispatch(updateDeliveryInfo(field, value));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeliveryInfo);

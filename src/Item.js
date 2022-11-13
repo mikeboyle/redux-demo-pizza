@@ -1,12 +1,7 @@
-import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { addToCart } from './app/actions';
 
-const Item = ({ item }) => {
-  const dispatch = useDispatch();
-  const handleAddToCart = (item) => {
-    dispatch(addToCart(item));
-  };
-
+const Item = ({ handleAddToCart, item }) => {
   return (
     <article className="Item">
       <p>
@@ -19,4 +14,8 @@ const Item = ({ item }) => {
   );
 };
 
-export default Item;
+const mapDispatchToProps = (dispatch) => ({
+  handleAddToCart: (item) => dispatch(addToCart(item)),
+});
+
+export default connect(null, mapDispatchToProps)(Item);

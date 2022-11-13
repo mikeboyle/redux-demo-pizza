@@ -1,13 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { setSearch } from './app/actions';
 
-const Search = () => {
-  const search = useSelector((state) => state.search);
-  const dispatch = useDispatch();
-
-  const handleSearchInput = (e) => {
-    dispatch(setSearch(e.target.value));
-  };
+const Search = ({ search, handleSearchInput }) => {
   return (
     <div>
       <input
@@ -20,4 +14,19 @@ const Search = () => {
   );
 };
 
-export default Search;
+const mapStateToProps = (state) => {
+  const { search } = state;
+  return { search };
+};
+/*
+ * mapDispatchToProps also returns an object whose keys
+ * are the props your component exepcts to receive.
+ * The values are going to be functions that call dispatch(some action)
+ */
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleSearchInput: (e) => dispatch(setSearch(e.target.value)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

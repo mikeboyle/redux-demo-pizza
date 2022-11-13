@@ -1,18 +1,20 @@
-import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { removeFromCart } from './app/actions';
 
-const CartItem = ({ cartItem, index }) => {
-  const dispatch = useDispatch();
-  const handleRemoveFromCart = () => {
-    dispatch(removeFromCart(index));
-  };
-
+const CartItem = ({ cartItem, handleRemoveFromCart, index }) => {
   return (
     <article>
       {cartItem.name} ${cartItem.price.toFixed(2)}
-      <button onClick={() => handleRemoveFromCart(cartItem)}>Remove</button>
+      <button onClick={() => handleRemoveFromCart()}>Remove</button>
     </article>
   );
 };
 
-export default CartItem;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const { index } = ownProps;
+  return {
+    handleRemoveFromCart: () => dispatch(removeFromCart(index)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CartItem);

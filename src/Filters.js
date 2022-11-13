@@ -1,18 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { clickFilter, clearFilters } from './app/actions';
 
-const Filters = () => {
-  const dispatch = useDispatch();
-  const filters = useSelector((state) => state.filters);
-  const selectedFilters = useSelector((state) => state.selectedFilters);
-
-  const handleFilterClick = (filter) => {
-    dispatch(clickFilter(filter));
-  };
-
-  const handleClearFilters = () => {
-    dispatch(clearFilters());
-  };
+const Filters = ({
+  filters,
+  selectedFilters,
+  handleClearFilters,
+  handleFilterClick,
+}) => {
   return (
     <div>
       {filters.map((filter) => (
@@ -32,4 +26,14 @@ const Filters = () => {
   );
 };
 
-export default Filters;
+const mapStateToProps = (state) => {
+  const { filters, selectedFilters } = state;
+  return { filters, selectedFilters };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  handleClearFilters: () => dispatch(clearFilters()),
+  handleFilterClick: (filter) => dispatch(clickFilter(filter)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);
