@@ -1,46 +1,39 @@
-# Getting Started with Create React App and Redux
+# State Management: Implementing Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This demo app goes with the [Implementing Redux presentation slides found here](https://docs.google.com/presentation/d/1xzE8DyhF44FAq2ysnE_bZuYHR4hW9XlbVOoRNzubHE0/edit?usp=sharing)
 
-## Available Scripts
+## Running locally
 
-In the project directory, you can run:
+- Clone this repo
+- `npm install` dependencies
+- `npm start`
+- You should be good to go at `localhost:3000`
 
-### `npm start`
+## Branches
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `main`: Main branch: we'll add features to this branch
+- `broken-reducers`: Switch to this branch and practice fixing the reducers that mutate state
+- `finished`: The full implementation, for your reference
+- `legacy`: A refactored version of `finished` that uses the older `connect()` with `mapStateToProps()` and `mapStateToDispatch()`.    
+    - [This GitHub comparison link](https://github.com/mikeboyle/redux-demo-pizza/compare/finished..legacy) shows the changes made to replace the hooks with `connect()`. 
+    - You can also view [the reverse diff link](https://github.com/mikeboyle/redux-demo-pizza/compare/legacy..finished) to see how to refactor legacy code into hooks code.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Codealong activities
 
-### `npm test`
+1. On `main` branch, implement the `Clear All` filters button
+1. On the `broken-reducers` branch, fix the following reducers that mutate state:
+    1. Click on a filter
+    1. Remove item from cart
+    1. Type into delivery info form
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Further practice
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Button that clears all items from cart
+- Button that clears the order form
+- Clear order form after submit
+- Show total number of items in cart
+- Add subtotal, tax, grand total to cart
+- Show quantity if 2+ of same item in cart
+- Let users sort items by name and price
+- Add toppings to a pizza in the cart
+- Let users add items to the menu
